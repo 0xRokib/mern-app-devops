@@ -8,54 +8,41 @@ This project is designed to showcase full-stack development skills, RESTful API 
 
 ## 🚀 Features
 
-- **Task Management**: Create, view, and delete tasks seamlessly.
-- **Responsive Design**: Built with **Tailwind CSS** for a mobile-first, modern UI.
-- **Real-time Updates**: Instant feedback on task creation and deletion.
-- **Error Handling**: Graceful error management with user-friendly notifications.
-- **Loading States**: Interactive Skeleton/Spinner loaders for better UX.
-- **Dockerized**: Fully containerized application with `docker-compose` for easy deployment.
+## 🚀 Projects Highlights
 
-## 🛠️ Tech Stack
+### 🔧 DevOps & Infrastructure
 
-### Frontend
+- **Automated CI/CD**: Complete GitHub Actions pipeline for linting, testing, and deployment.
+- **Container Orchestration**: Multi-container setup using **Docker Compose** for consistency.
+- **Cloud Native**: Hosted on **AWS EC2** with secure SSH-based automatic deployments.
+- **Infrastructure Maintenance**: Automated cleanup and resource optimization scripts.
 
-- **React.js**: (v19) Powered by **Vite** for fast development.
-- **Tailwind CSS**: (v4) For rapid and customized styling.
-- **JavaScript (ES6+)**: clean and modular code structure.
+### 💻 Application Features
 
-### Backend
-
-- **Node.js & Express.js**: Robust REST API architecture.
-- **MongoDB & Mongoose**: NoSQL database for flexible data storage.
-- **Cors & Dotenv**: Middleware for security and configuration.
-
-### DevOps
-
-- **Docker**: Containerization for "write once, run anywhere".
-- **Docker Compose**: Orchestration of multi-container environments (Client & Server).
-- **GitHub Actions**: Automated CI/CD pipeline for linting, testing, and deployment.
-- **AWS EC2**: Production hosting environment.
+- **Task Management**: Create, read, and delete operations with optimisic UI updates.
+- **Responsive UI**: System-font stack with **Tailwind CSS** for superior performance.
+- **Error Handling**: Graceful degradation and user-friendly error boundaries.
 
 ## ♾️ DevOps & CI/CD Pipeline
 
-This project implements a fully automated **CI/CD pipeline** using **GitHub Actions**. Use this section to understand the automation workflow.
+This project demonstrates a production-grade **DevOps workflow**, automating the path from code commit to cloud deployment.
 
-### 🔄 CI: Continuous Integration
+### 🔄 CI: Continuous Integration Protocol
 
-Every push to `main` or `dev` branches triggers the `build-and-lint` job:
+Triggered on updates to `main`, this stage ensures code integrity:
 
-1.  **Linting**: Runs `eslint` for both Client and Server to ensure code quality.
-2.  **Dependency Checks**: Verifies `npm ci` installs cleanly.
-3.  **Docker Build**: Validates that both Frontend and Backend Docker images build successfully.
+1.  **Static Code Analysis**: Runs `eslint` across the monorepo to enforce code quality standards.
+2.  **Dependency Integrity**: Uses `npm ci` for deterministic dependency resolution.
+3.  **Build Validation**: Compiles Docker images for both services to verify deployability.
 
-### 🚀 CD: Continuous Deployment
+### 🚀 CD: Continuous Deployment Strategy
 
-Upon a successful merge to the `main` branch, the `deploy` job automates the release:
+Automated delivery to **AWS EC2** infrastructure:
 
-1.  **SSH Connection**: Securely connects to the production **AWS EC2** instance.
-2.  **Code Pull**: Fetches the latest code from the repository.
-3.  **Orchestration**: Runs `docker-compose up -d --build` to safely restart services with zero configuration drift.
-4.  **Cleanup**: Executes `docker image prune` to keep disk usage optimized.
+1.  **Secure Handshake**: Establishes SSH connection using encrypted GitHub Secrets.
+2.  **Artifact Retrieval**: Fetches the latest commits directly on the production host.
+3.  **Container Relaunch**: Executes `docker-compose up -d --build` for seamless service updates.
+4.  **Resource Optimization**: Runs `docker image prune -f` to prevent storage bloat.
 
 ## 📂 Project Structure
 
