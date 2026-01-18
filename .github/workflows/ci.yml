@@ -1,10 +1,11 @@
 name: build-and-lint
 
 on:
-  push:
-    branches: [main, dev]
-  pull_request:
-    branches: [main, dev]
+  # push:
+  #   branches: [main, dev]
+  # pull_request:
+  #   branches: [main, dev]
+  workflow_dispatch: # Setup for manual triggering (skips auto-run due to billing limits)
 
 jobs:
   build-and-lint:
